@@ -15,11 +15,8 @@ Template.createca.events({
       var pass = event.target[6].value;
 
       Meteor.call("createCa", cn, email, locale_name, org_name, state, country, function (er, res) {
-        if (er) {
-          showData(er);
-        } else {
-          showData(res);
-        }
+        if (er) showData(er);
+        else showData(res);
       });
 
       event.target[0].value = '';
