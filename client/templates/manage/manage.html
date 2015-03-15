@@ -2,7 +2,11 @@
   <div class="container-fluid">
     <h2>This is the manage template</h2>
   </div>
-  <div class="container-fluid">
-    <button id="button_createca" class="btn btn-default">Create CA</button>
+  <div class="container">
+    <button id="button_createca" class="btn btn-success">Create CA</button>
+    <button class="btn btn-success disabled">Download CRL</button>
   </div>
+
+  {{> showca }}
+
 </template>

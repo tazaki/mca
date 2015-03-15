@@ -1,6 +1,11 @@
 Meteor.methods({
   createCa: function (cn, email, locale_name, org_name, state, country) {
 
+    //Meteor.call('addCa', cn, email, locale_name, org_name, state, country);
+
+    return "Done";
+
+/*
     Future = Npm.require('fibers/future');
     var mf = new Future();
 
@@ -11,6 +16,8 @@ Meteor.methods({
     //createBaseFiles();
 
     return mf.wait();
+*/
+
   },
 
 });

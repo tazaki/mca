@@ -1,0 +1,31 @@
+<template name="showkeypairs">
+  <div class="container">
+
+    <h2>Keypairs</h2>
+
+    <button class="btn btn-success disabled">Create New Keypair</button>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Common Name</th>
+          <th>Created</th>
+          <th>Expires</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>test1</td>
+          <td>Jan 6 1999</td>
+          <td>Jan 6 2009</td>
+          <td>
+            <button class="btn btn-info disabled">Renew</button>
+            <button class="btn btn-success disabled">Download</button>
+            <button class="btn btn-danger disabled">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>

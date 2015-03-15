@@ -2,6 +2,7 @@ function showData (text) {
   $('#creatingca-panel-content p').html(text);
   $('#creatingca-panel-content img').addClass('hidden');
   $('#creatingca-panel-content p').removeClass('hidden');
+  $('#creatingca-panel-content button').removeClass('hidden');
 }
 
 Template.createca.events({
