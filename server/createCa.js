@@ -1,7 +1,7 @@
 Meteor.methods({
   createCa: function (cn, email, locale_name, org_name, state, country) {
 
-    //Meteor.call('addCa', cn, email, locale_name, org_name, state, country);
+    Meteor.call('addCa', cn, email, locale_name, org_name, state, country);
 
     return "Done";
 
