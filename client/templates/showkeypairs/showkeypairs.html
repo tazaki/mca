@@ -3,8 +3,9 @@
 
     <h2>Keypairs</h2>
 
-    <button class="btn btn-success disabled">Create New Keypair</button>
+    <button class="btn btn-success">Create New Keypair</button>
 
+    {{#if cainfo.cn}}
     <table class="table table-striped">
       <thead>
         <tr>
@@ -23,5 +24,7 @@
         {{/each}}
       </tbody>
     </table>
+    {{/if}}
+
   </div>
 </template>
