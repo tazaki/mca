@@ -1,7 +1,7 @@
-Meteor.publish("Cas", function () {
+Meteor.publish("cas", function () {
   return Cas.find({});
 });
 
-Meteor.publish("Keypairs", function () {
-  return Keypairs.find({});
+Meteor.publish("keypairs", function () {
+  return Keypairs.find();
 });

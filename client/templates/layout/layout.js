@@ -1,5 +1,3 @@
-Meteor.subscribe("Cas");
-
 Template.layout.events({
   "click .navbar li": function (event) {
     $("li").removeClass("active");
