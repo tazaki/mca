@@ -14,17 +14,13 @@
           <th>Operations</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr>
-          <td>test1</td>
-          <td>Jan 6 1999</td>
-          <td>Jan 6 2009</td>
-          <td>
-            <button class="btn btn-info disabled">Renew</button>
-            <button class="btn btn-success disabled">Download</button>
-            <button class="btn btn-danger disabled">Delete</button>
-          </td>
-        </tr>
+        {{#each keypairs}}
+          <tr>
+            {{> keypairsInfo }}
+          </tr>
+        {{/each}}
       </tbody>
     </table>
   </div>
