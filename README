@@ -1,0 +1,7 @@
+** WORK IN PROGRESS **
+
+This is a meteor app to act as a simple stand alone certificate authority.
+
+To run you need to:
+- Install meteor
+- Run the meteor command inside the project directory
