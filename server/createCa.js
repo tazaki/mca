@@ -1,11 +1,17 @@
 Meteor.methods({
   createCa: function (cn, email, locale_name, org_name, state, country) {
 
-    var resp = '';
+    writeTemplate();
 
+    return 'ran';
+    
     // Create directory/file structure
-    createBaseFiles();
-
+    /*
+    console.log('Creating files and directories for ca.');
+    createBaseFiles(function (data) {
+      console.log(data);
+    });
+*/
     // Add ca to database
     //Meteor.call('addCa', cn, email, locale_name, org_name, state, country);
 
