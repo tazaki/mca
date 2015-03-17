@@ -8,26 +8,5 @@ Meteor.methods({
       state: state,
       country: country
     });
-
-    Keypairs.insert({
-      cn: 'testcn1',
-      created: new Date(),
-      expires: new Date()
-    });
-
-    Keypairs.insert({
-      cn: 'testcn2',
-      created: new Date(),
-      expires: new Date()
-    });
-
-    Keypairs.insert({
-      cn: 'testcn3',
-      created: new Date(),
-      expires: new Date()
-    });
-
-
   },
-
 });

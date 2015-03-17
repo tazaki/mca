@@ -2,16 +2,13 @@ var fs = Npm.require('fs');
 
 createBaseFiles = function () {
 
-  console.log('hi');
+  var root_dir = '/opt/cafiles';
 
-  var root_dir = '/opt/mca';
+  fs.mkdirSync(root_dir + '/ca');
+  fs.mkdirSync(root_dir + '/certs');
 
-  fs.mkdir(root_dir, function (ex) {
-    if (ex) {
-      console.log(ex);
-    } else {
-      console.log("Created directory: " + root_dir);
-    }
-  });
-
+  //Create openssl.conf
+  //Create index
+  //Create serial
+  
 }
