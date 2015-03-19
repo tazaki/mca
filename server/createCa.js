@@ -9,12 +9,27 @@ Meteor.methods({
       country: country
     };
 
-    writeTemplate('templates/openssl.conf.hb', tempData, '/tmp/openssl.cnf');
+    var fs = Npm.require('fs');
+    var writef = function (file,data) {
+      fs.writeFile(file, data, function(err) {
+        if(err) {
+          return console.log(err);
+        }
+        console.log("Created " + file);
+      });
+    }
+
+    // openssl.conf
+    writeTemplate('templates/openssl.conf.hb', tempData, '/tmp/openssl.cnf', function (data) {
+      console.log(data);
+    });
 
     //touch index.txt
-
+    writef("/tmp/index.txt",'');
     // echo '01' > serial
+    writef("/tmp/serial",'01');
     // echo '01' > crlnumber
+    writef("/tmp/crlnumber",'01');
 
     return 'ran';
 
@@ -32,16 +47,9 @@ Meteor.methods({
     // Sign and create crl for new keypair
     openssl ca -batch -config openssl.cnf -policy policy_anything -out test1.crt -infiles test1.csr
 
-
-    console.log('Creating files and directories for ca.');
-    createBaseFiles(function (data) {
-      console.log(data);
-    });
 */
     // Add ca to database
     //Meteor.call('addCa', cn, email, locale_name, org_name, state, country);
-
-    // Run commands to create ca pub/key
 /*
 
     Future = Npm.require('fibers/future');
