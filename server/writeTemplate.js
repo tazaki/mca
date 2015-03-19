@@ -1,8 +1,8 @@
 var hb = Meteor.npmRequire('handlebars');
 var fs = Npm.require('fs');
 
-writeTemplate = function (template_file, data) {
+writeTemplate = function (template_file, data, dest_file) {
   var template = hb.compile(Assets.getText(template_file));
   var result = template(data);
-  console.log(result);
+  fs.writeFileSync(dest_file, result);
 }
