@@ -10,7 +10,7 @@ default_ca	= CA_default		# The default ca section
 
 [ CA_default ]
 
-dir		= .		# Where everything is kept
+dir		= {{ mca_root_path }}		# Where everything is kept
 certs		= $dir/certs		# Where the issued certs are kept
 crl_dir		= $dir/crl		# Where the issued crl are kept
 database	= $dir/index.txt	# database index file.

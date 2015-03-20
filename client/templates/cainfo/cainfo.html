@@ -37,8 +37,19 @@
           <td>Country</td>
           <td>{{ country }}</td>
         </tr>
+        <tr>
+          <td>Created</td>
+          <td>{{ created }}</td>
+        </tr>
+        <tr>
+          <td>Expires</td>
+          <td>{{ expires }}</td>
+        </tr>
       </tbody>
     </table>
+
+    <button class='btn btn-info'>Download CA Certificate</button>
+    <button class='btn btn-danger disabled'>Delete CA</button>
   </div>
   {{/if}}
 </template>

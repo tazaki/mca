@@ -20,11 +20,12 @@ runCmd = function (cmd, args, callback) {
       callback(null,resp);
     });
 
+/*
     child.stderr.on('data', function (buff) {
       console.log("error:")
       console.log(buff.toString());
     });
-
+*/
     child.on('exit', function (code) {
       console.log('exit code: ' + code);
     });

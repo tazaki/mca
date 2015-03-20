@@ -1,5 +1,8 @@
-function showData (text) {
-  $('#creatingca-panel-content p').html(text);
+function showData (arr) {
+  $('#creatingca-panel-content p').remove();
+  for (var i = 0, len = arr.length; i < len; i++) {
+    $('#creatingca-panel-dynamic-content').append('<p>' + arr[i] + '</p>');
+  }
   $('#creatingca-panel-content img').addClass('hidden');
   $('#creatingca-panel-content p').removeClass('hidden');
   $('#creatingca-panel-content button').removeClass('hidden');
