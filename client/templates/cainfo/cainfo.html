@@ -3,11 +3,11 @@
     <h2>This is the cainfo template</h2>
   </div>
   <div class="container">
-    <button id="button_createca" class="btn btn-success {{#if cn}}disabled hidden{{/if}}">Create CA</button>
+    <button id="button_createca" class="btn btn-success {{#if metadata.cn}}disabled hidden{{/if}}">Create CA</button>
     <!--<button class="btn btn-success disabled">Download CRL</button>-->
   </div>
 
-  {{#if cn}}
+  {{#if metadata.cn}}
   <div id="cainfo_table" class="container">
 
     <h2>CA Information</h2>
@@ -15,40 +15,40 @@
       <tbody>
         <tr>
           <td>Common Name</td>
-          <td>{{ cn }}</td>
+          <td>{{ metadata.cn }}</td>
         </tr>
         <tr>
           <td>Email</td>
-          <td>{{ email }}</td>
+          <td>{{ metadata.email }}</td>
         </tr>
         <tr>
           <td>Locale Name</td>
-          <td>{{ localename }}</td>
+          <td>{{ metadata.localename }}</td>
         </tr>
         <tr>
           <td>Organization</td>
-          <td>{{ orgname }}</td>
+          <td>{{ metadata.orgname }}</td>
         </tr>
         <tr>
           <td>State</td>
-          <td>{{ state }}</td>
+          <td>{{ metadata.state }}</td>
         </tr>
         <tr>
           <td>Country</td>
-          <td>{{ country }}</td>
+          <td>{{ metadata.country }}</td>
         </tr>
         <tr>
           <td>Created</td>
-          <td>{{ created }}</td>
+          <td>{{ createdAt }}</td>
         </tr>
         <tr>
           <td>Expires</td>
-          <td>{{ expires }}</td>
+          <td>{{ metadata.expires }}</td>
         </tr>
       </tbody>
     </table>
 
-    <button class='btn btn-info'>Download CA Certificate</button>
+    <a href="{{this.url download=true}}" class="btn btn-success">Download Certificate</a>
     <button class='btn btn-danger disabled'>Delete CA</button>
   </div>
   {{/if}}

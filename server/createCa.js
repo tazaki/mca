@@ -1,5 +1,5 @@
 Meteor.methods({
-  createCa: function (cn, email, locale_name, org_name, state, country) {
+  createCa: function (cn, email, locale_name, org_name, state, country, expires) {
     rtn_data = [];
     tempData = {
       cn: cn,
@@ -71,7 +71,6 @@ Meteor.methods({
       });
     });
 
-    Meteor.call('addCa', cn, email, locale_name, org_name, state, country, new Date(), new Date());
 
     return mf.wait();
 /*
