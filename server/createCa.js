@@ -70,20 +70,7 @@ Meteor.methods({
         return mf.return(rtn_data);
       });
     });
-
-
     return mf.wait();
-/*
-    // Make a key and crl for new keypair
-    openssl req -config openssl.cnf -new -nodes -keyout test1.key -out test1.csr -days 365
-
-    // Sign and create crl for new keypair
-    openssl ca -batch -config openssl.cnf -policy policy_anything -out test1.crt -infiles test1.csr
-
-*/
-
-    // Add ca to database
-
   }
 
 });

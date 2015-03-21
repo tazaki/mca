@@ -3,9 +3,9 @@
 
     <h2>Keypairs</h2>
 
-    <button class="btn btn-success disabled">Create New Keypair</button>
+    {{#if cainfo.metadata.cn}}
+    {{> addKeypair }}
 
-    {{#if cainfo.cn}}
     <table class="table table-striped">
       <thead>
         <tr>
@@ -29,9 +29,9 @@
   </div>
 </template>
 <template name="keypairinfo">
-  <td>{{ cn }}</td>
-  <td>{{ created }}</td>
-  <td>{{ expires }}</td>
+  <td>{{ metadata.cn }}</td>
+  <td>{{ metadata.created }}</td>
+  <td>{{ metadate.expires }}</td>
   <td>
     <button class="btn btn-info disabled">Renew</button>
     <button class="btn btn-success disabled">Download</button>
