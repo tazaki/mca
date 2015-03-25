@@ -39,6 +39,11 @@ Meteor.methods({
       rtn_data.push(data);
     });
 
+    fs.mkdir(mca_root_path + '/signed', function(err, data) {
+      if (err) throw err;
+      rtn_data.push("Created directory: " + mca_root_path + '/signed');
+    });
+
     var cmd = 'openssl';
 
     var args = [
@@ -50,8 +55,6 @@ Meteor.methods({
 
     Future = Npm.require('fibers/future');
     var mf = new Future();
-    var output = '';
-
     runCmd(cmd, args, function (err, res) {
       if (err) throw err;
       rtn_data.push('Ran command: ' + cmd + ' ' + args.join(' '));

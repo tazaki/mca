@@ -6,6 +6,6 @@ writeTemplate = function (template_file, data, dest_file, callback) {
   var result = template(data);
   fs.writeFile(dest_file, result, function(err) {
     if(err) return (err);
-    return callback("Created " + dest_file);
+    return callback("Created file: " + dest_file);
   });
 }

@@ -4,13 +4,7 @@
     <h2>Keypairs</h2>
 
     {{#if cainfo.cn}}
-    <form id="form-addkeypair" class="form-inline" role="form">
-      <div class="form-group">
-        <label for="cn">Common Name:</label>
-        <input type="text" class="form-control" id="cn">
-      </div>
-      <button type="submit" class="btn btn-success">Add Keypair</button>
-    </form>
+    {{> addKeypair}}
 
     <table class="table table-striped">
       <thead>
