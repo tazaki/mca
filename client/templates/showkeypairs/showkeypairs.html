@@ -1,9 +1,8 @@
 <template name="showkeypairs">
   <div class="container">
-
+    {{#if cainfo.cn}}
     <h2>Keypairs</h2>
 
-    {{#if cainfo.cn}}
     {{> addKeypair}}
 
     <table class="table table-striped">
@@ -33,8 +32,7 @@
   <td>{{ created }}</td>
   <td>{{ expires }}</td>
   <td>
-    <button class="btn btn-info disabled">Renew</button>
-    <button class="btn btn-success disabled">Download</button>
-    <button class="btn btn-danger disabled">Delete</button>
+    <button class="btn btn-success button_download_kpkey">Download Private Key</button>
+    <button class="btn btn-success button_download_kpcert">Download Certificate</button>
   </td>
 </template>
