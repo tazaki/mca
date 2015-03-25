@@ -3,11 +3,11 @@
     <h2>This is the cainfo template</h2>
   </div>
   <div class="container">
-    <button id="button_createca" class="btn btn-success {{#if metadata.cn}}disabled hidden{{/if}}">Create CA</button>
+    <button id="button_createca" class="btn btn-success {{#if cn}}disabled hidden{{/if}}">Create CA</button>
     <!--<button class="btn btn-success disabled">Download CRL</button>-->
   </div>
 
-  {{#if metadata.cn}}
+  {{#if cn}}
   <div id="cainfo_table" class="container">
 
     <h2>CA Information</h2>
@@ -15,27 +15,27 @@
       <tbody>
         <tr>
           <td>Common Name</td>
-          <td>{{ metadata.cn }}</td>
+          <td>{{ cn }}</td>
         </tr>
         <tr>
           <td>Email</td>
-          <td>{{ metadata.email }}</td>
+          <td>{{ email }}</td>
         </tr>
         <tr>
           <td>Locale Name</td>
-          <td>{{ metadata.localename }}</td>
+          <td>{{ localename }}</td>
         </tr>
         <tr>
           <td>Organization</td>
-          <td>{{ metadata.orgname }}</td>
+          <td>{{ orgname }}</td>
         </tr>
         <tr>
           <td>State</td>
-          <td>{{ metadata.state }}</td>
+          <td>{{ state }}</td>
         </tr>
         <tr>
           <td>Country</td>
-          <td>{{ metadata.country }}</td>
+          <td>{{ country }}</td>
         </tr>
         <tr>
           <td>Created</td>
@@ -43,12 +43,12 @@
         </tr>
         <tr>
           <td>Expires</td>
-          <td>{{ metadata.expires }}</td>
+          <td>{{ expires }}</td>
         </tr>
       </tbody>
     </table>
 
-    <a href="{{this.url download=true}}" class="btn btn-success">Download Certificate</a>
+    <button id="button_download_ca" class="btn btn-success">Download Certificate</button>
     <button class='btn btn-danger disabled'>Delete CA</button>
   </div>
   {{/if}}
