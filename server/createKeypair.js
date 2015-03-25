@@ -1,18 +1,11 @@
-/*
-    // Make a key and crl for new keypair
-
-    // Sign and create crl for new keypair
-    openssl ca -batch -config openssl.cnf -policy policy_anything -out test1.crt -infiles test1.csr
-
-*/
-
 Meteor.methods({
   createKeypair: function (cn, expires) {
-
     // Create dir for keypair
+    var fs = Npm.require('fs');
+    fs.mkdirSync(mca_root_path + '/' + cn);
 
     // Create openssl.conf in keypair dir
-    writeTemplate('templates/openssl.conf.hb', tempData, mca_root_path + '/openssl.cnf', function (data) {
+    writeTemplate('templates/openssl.conf.hb', certData, mca_root_path + cn + '/openssl.cnf', function (data) {
       rtn_data.push(data);
     });
 
@@ -31,8 +24,8 @@ Meteor.methods({
       'req',
       '-config', 'openssl.cnf',
       '-new', '-nodes',
-      '-keyout', 'key.pem',
-      '-out', 'csr.pem',
+      '-keyout', mca_root_path + cn + 'key.pem',
+      '-out', mca_root_path + cn + 'csr.pem',
       '-days', '365'
     ];
 
@@ -42,8 +35,8 @@ Meteor.methods({
       'ca', '-batch',
       '-config', 'openssl.cnf',
       '-policy', 'policy_anything',
-      '-out', 'crt.pem',
-      '-infiles', 'csr.pem'
+      '-out', mca_root_path + cn + 'crt.pem',
+      '-infiles', mca_root_path + cn + 'csr.pem'
     ];
 
   }
