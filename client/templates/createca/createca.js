@@ -18,10 +18,10 @@ Template.createca.events({
       var country = event.target[5].value;
       var pass = event.target[6].value;
 
-      Meteor.call("createCa", cn, email, locale_name, org_name, state, country, new Date(), function (er, res) {
+      Meteor.call("createCa", cn, email, locale_name, org_name, state, country, function (er, res) {
         if (er) showData(er);
         else showData(res);
-        Meteor.call('addCa', cn, email, locale_name, org_name, state, country, new Date());
+        Meteor.call('addCa', cn, email, locale_name, org_name, state, country);
       });
 
       event.target[0].value = '';
