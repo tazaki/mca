@@ -10,7 +10,6 @@ Template.addKeypair.events({
         cainfo.orgname,
         cainfo.state,
         cainfo.country,
-        mca_root_path,
         function (er, res) {
           if (er) throw er;
           // TODO do something with this response

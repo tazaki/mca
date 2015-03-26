@@ -1,5 +1,5 @@
 Meteor.methods({
-  createKeypair: function (cn, ca_email, ca_locale_name, ca_org_name, ca_state, ca_country, mca_root_path) {
+  createKeypair: function (cn, ca_email, ca_locale_name, ca_org_name, ca_state, ca_country) {
     var rtn_data = [];
 
     certData = {
@@ -11,7 +11,7 @@ Meteor.methods({
       country: ca_country,
       mca_root_path: mca_root_path
     };
-    
+
     Future = Npm.require('fibers/future');
     var mf = new Future();
 
