@@ -15,5 +15,5 @@ Meteor.methods({
       cert: mca_root_path + 'cacrt.pem',
       key: mca_root_path + 'cakey.pem'
     });
-  },
+  }
 });

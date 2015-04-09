@@ -1,10 +1,10 @@
 <template name="cainfo">
   <div class="container">
-    <button id="button_createca" class="btn btn-success {{#if cn}}disabled hidden{{/if}}">Create CA</button>
+    <button id="button_createca" class="btn btn-success {{#if cainfo.cn}}disabled hidden{{/if}}">Create CA</button>
     <!--<button class="btn btn-success disabled">Download CRL</button>-->
   </div>
 
-  {{#if cn}}
+  {{#if cainfo.cn}}
   <div id="cainfo_table" class="container">
 
     <h2>CA Information</h2>
@@ -12,35 +12,35 @@
       <tbody>
         <tr>
           <td>Common Name</td>
-          <td>{{ cn }}</td>
+          <td>{{ cainfo.cn }}</td>
         </tr>
         <tr>
           <td>Email</td>
-          <td>{{ email }}</td>
+          <td>{{ cainfo.email }}</td>
         </tr>
         <tr>
           <td>Locale Name</td>
-          <td>{{ localename }}</td>
+          <td>{{ cainfo.localename }}</td>
         </tr>
         <tr>
           <td>Organization</td>
-          <td>{{ orgname }}</td>
+          <td>{{ cainfo.orgname }}</td>
         </tr>
         <tr>
           <td>State</td>
-          <td>{{ state }}</td>
+          <td>{{ cainfo.state }}</td>
         </tr>
         <tr>
           <td>Country</td>
-          <td>{{ country }}</td>
+          <td>{{ cainfo.country }}</td>
         </tr>
         <tr>
           <td>Created</td>
-          <td>{{ created }}</td>
+          <td>{{ cainfo.created }}</td>
         </tr>
         <tr>
           <td>Expires</td>
-          <td>{{ expires }}</td>
+          <td>{{ cainfo.expires }}</td>
         </tr>
       </tbody>
     </table>
