@@ -36,16 +36,17 @@
         </tr>
         <tr>
           <td>Created</td>
-          <td>{{ cainfo.created }}</td>
+          <td>{{ toMomentTFN cainfo.created }}</td>
         </tr>
         <tr>
           <td>Expires</td>
-          <td>{{ cainfo.expires }}</td>
+          <td>{{ toMomentTFN cainfo.expires }}</td>
         </tr>
       </tbody>
     </table>
 
     <button id="button_download_ca" class="btn btn-success">Download CA Certificate</button>
+    <button id="button_download_crl" class="btn btn-success disabled">Download CRL Certificate</button>
     <button class='btn btn-danger disabled'>Delete CA</button>
   </div>
   {{/if}}

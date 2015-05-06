@@ -1,34 +1,22 @@
 <template name="showkeypairs">
   <div class="container">
     {{#if cainfo.cn}}
-    {{> addKeypair}}
-    <h2>Keypairs</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Common Name</th>
-          <th>Created</th>
-          <th>Expires</th>
-          <th>Downloads</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {{#each keypairs}}
-          <tr>
-            {{> keypairinfo}}
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+      {{> addKeypair}}
+      <h2>Keypairs</h2>
+      {{> reactiveTable settings=settings}}
     {{/if}}
-
   </div>
 </template>
-<template name="keypairinfo">
-  <td>{{ cn }}</td>
-  <td>{{ created }}</td>
-  <td>{{ expires }}</td>
+
+<template name="kpcreatedtemp">
+  <td class="kpcreated">{{ toMomentTFN created }}</td>
+</template>
+
+<template name="kpexpiredtemp">
+  <td>{{ toMomentTFN expires }}</td>
+</template>
+
+<template name="kpbuttons">
   <td>
     <button class="btn btn-success button_download_kpkey">{{ cn }}.key</button>
     <button class="btn btn-success button_download_kpcert">{{ cn }}.crt</button>
