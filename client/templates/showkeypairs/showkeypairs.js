@@ -12,9 +12,9 @@ Template.showkeypairs.helpers({
            showFilter: true,
            fields: [
              { key: 'cn', label: 'Common Name' },
+             { key: null, label: 'Downloads', tmpl: Template.kpbuttons},
              { key: 'created', label: 'Created', tmpl: Template.kpcreatedtemp },
-             { key: 'expires', label: 'Expires', tmpl: Template.kpexpiredtemp },
-             { key: null, label: 'Downloads', tmpl: Template.kpbuttons}
+             { key: 'expires', label: 'Expires', tmpl: Template.kpexpiredtemp }
            ]
        };
    }
