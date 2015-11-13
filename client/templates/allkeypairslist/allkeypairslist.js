@@ -1,9 +1,13 @@
+Meteor.subscribe("cas");
 Meteor.subscribe("keypairs");
 
-Template.keypairlist.helpers({
+Template.allkeypairslist.helpers({
+  cas: function () {
+    return Cas.find({});
+  },
   settings: function () {
     return {
-      collection: Keypairs.find({caId: this._id}),
+      collection: Keypairs.find({}),
       rowsPerPage: 10,
       showFilter: true,
       fields: [
@@ -16,7 +20,7 @@ Template.keypairlist.helpers({
   }
 });
 
-Template.keypairlist.events({
+Template.allkeypairslist.events({
   "click tbody tr": function (event) {
     Router.go('keypairs.show', {_id: this._id});
   }
