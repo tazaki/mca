@@ -1,0 +1,14 @@
+<template name="kpbuttons">
+  <td>
+    <button class="btn btn-success button_download_kpkey">.key</button>
+    <button class="btn btn-success button_download_kpcert">.crt</button>
+  </td>
+</template>
+
+<template name="kpcreatedtemp">
+  <td class="kpcreated">{{ toMomentTFN created }}</td>
+</template>
+
+<template name="kpexpiredtemp">
+  <td>{{ toMomentTFN expires }}</td>
+</template>
