@@ -9,14 +9,7 @@
     </div>
     <div id="collapse{{ cn }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{ cn }}">
       <div class="panel-body">
-
-        <form class="form-inline new-keypair">
-          <div class="form-group">
-            <label for="inputkeypair">New Keypair</label>
-            <input type="text" class="form-control" id="inputkeypair" placeholder="Type to add new keypair">
-          </div>
-          <button type="submit" class="btn btn-default">Create</button>
-        </form>
+        {{> newkeypair }}
 
         <table class="table table-bordered table-hover table-condensed">
           <thead>
