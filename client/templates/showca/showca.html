@@ -1,0 +1,60 @@
+<template name="showca">
+   <div id="cainfo_table" class="container">
+
+     <h2>CA Information</h2>
+     <table class="table table-striped">
+       <tbody>
+         <tr>
+           <td>Common Name</td>
+           <td>{{ cn }}</td>
+         </tr>
+         <tr>
+           <td>Email</td>
+           <td>{{ email }}</td>
+         </tr>
+         <tr>
+           <td>Locale Name</td>
+           <td>{{ localename }}</td>
+         </tr>
+         <tr>
+           <td>Organization</td>
+           <td>{{ orgname }}</td>
+         </tr>
+         <tr>
+           <td>State</td>
+           <td>{{ state }}</td>
+         </tr>
+         <tr>
+           <td>Country</td>
+           <td>{{ country }}</td>
+         </tr>
+         <tr>
+           <td>Created</td>
+           <td>{{ toMomentTFN created }}</td>
+         </tr>
+         <tr>
+           <td>Expires</td>
+           <td>{{ toMomentTFN expires }}</td>
+         </tr>
+       </tbody>
+     </table>
+
+     <button id="button_download_ca" class="btn btn-success disabled">Download CA Certificate</button>
+     <button id="button_download_crl" class="btn btn-success disabled">Download CRL Certificate</button>
+     <button class='btn btn-danger disabled'>Delete CA</button>
+
+     <table class="table table-bordered table-hover table-condensed">
+       <thead>
+         <tr>
+           <th>CN</th>
+         </tr>
+       </thead>
+       <tbody>
+         {{#each keypairs}}
+           {{>keypair}}
+         {{/each}}
+       </tbody>
+     </table>
+
+   </div>
+</template>
