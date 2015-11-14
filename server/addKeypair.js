@@ -1,9 +1,11 @@
 Meteor.methods({
-  addKeypair: function (newcn, caid) {
+  addKeypair: function (newcn, caid, owner, username) {
     Keypairs.insert({
       cn: newcn,
       createdAt: new Date(),
-      caId: caid
+      caId: caid,
+      owner: owner,
+      username: username
     });
   }
 });

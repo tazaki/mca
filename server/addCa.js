@@ -1,5 +1,5 @@
 Meteor.methods({
-  addCa: function (cn, email, locale_name, org_name, state, country) {
+  addCa: function (cn, email, locale_name, org_name, state, country, owner, username) {
     Future = Npm.require('fibers/future');
     var mf = new Future();
 
@@ -15,7 +15,9 @@ Meteor.methods({
       state: state,
       country: country,
       created: created,
-      expires: expires
+      expires: expires,
+      owner: owner,
+      username: username
       //cert: mca_root_path + 'cacrt.pem',
       //key: mca_root_path + 'cakey.pem'
     }, function (err,newid) {

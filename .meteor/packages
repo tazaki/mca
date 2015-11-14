@@ -24,3 +24,5 @@ meteorhacks:npm
 npm-container
 aslagle:reactive-table
 momentjs:moment
+accounts-ui
+accounts-password
