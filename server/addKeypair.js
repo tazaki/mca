@@ -1,5 +1,5 @@
 Meteor.methods({
-  addKeypair: function (newcn, caid, owner, username) {
+  addKeypair: function (newcn, caid, caname, userid, username) {
     if (! Meteor.userId()) {
       throw new Meteor.Error("not-authorized");
     }
@@ -8,7 +8,8 @@ Meteor.methods({
       cn: newcn,
       createdAt: new Date(),
       caId: caid,
-      owner: owner,
+      caname: caname,
+      userId: userid,
       username: username
     });
   }

@@ -13,8 +13,8 @@ Template.allkeypairslist.helpers({
       fields: [
         { key: 'cn', label: 'Common Name' },
         { key: 'created', label: 'Created', tmpl: Template.kpcreatedtemp },
-        { key: null, label: 'Created By', tmpl: Template.kpcreatedby },
-        { key: null, label: 'CA', tmpl: Template.kpca },
+        { key: 'username', label: 'Created By', tmpl: Template.kpcreatedby },
+        { key: 'caname', label: 'CA', tmpl: Template.kpca },
         { key: 'expires', label: 'Expires', tmpl: Template.kpexpiredtemp },
         { key: null, label: 'Downloads', tmpl: Template.kpdownloads },
         { key: null, label: 'Actions', tmpl: Template.kpactions }

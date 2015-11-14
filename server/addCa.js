@@ -1,5 +1,5 @@
 Meteor.methods({
-  addCa: function (cn, email, locale_name, org_name, state, country, owner, username) {
+  addCa: function (cn, email, locale_name, org_name, state, country, userid, username) {
 
     if (! Meteor.userId()) {
       throw new Meteor.Error("not-authorized");
@@ -21,7 +21,7 @@ Meteor.methods({
       country: country,
       created: created,
       expires: expires,
-      owner: owner,
+      userId: userid,
       username: username
       //cert: mca_root_path + 'cacrt.pem',
       //key: mca_root_path + 'cakey.pem'
