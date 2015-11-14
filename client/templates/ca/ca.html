@@ -3,30 +3,14 @@
     <div class="panel-heading" role="tab" id="heading{{ cn }}">
       <h4 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ cn }}" aria-expanded="false" aria-controls="collapse{{ cn }}">
-          <h1>{{ cn }}<button type="button" class="btn btn-info ca-info-button">Info</button></h1>
+          <h1>{{ cn }}<button type="button" class="btn btn-info ca-info-button pull-right">Info</button></h1>
         </a>
       </h4>
     </div>
     <div id="collapse{{ cn }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{ cn }}">
       <div class="panel-body">
         {{> newkeypair }}
-
         {{> keypairlist }}
-<!--
-        <table class="table table-bordered table-hover table-condensed">
-          <thead>
-          <tr>
-            <th>CN</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each keypairs}}
-            {{>keypair}}
-          {{/each}}
-        </tbody>
-        </table>
--->
-
       </div>
     </div>
   </div>

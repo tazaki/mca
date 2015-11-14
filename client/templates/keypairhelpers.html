@@ -1,7 +1,14 @@
-<template name="kpbuttons">
+<template name="kpdownloads">
   <td>
-    <button class="btn btn-success button_download_kpkey">.key</button>
-    <button class="btn btn-success button_download_kpcert">.crt</button>
+    <button disabled="disabled" class="btn btn-success button_download_kpkey">.key</button>
+    <button disabled="disabled" class="btn btn-success button_download_kpcert">.crt</button>
+  </td>
+</template>
+
+<template name="kpactions">
+  <td>
+    <button disabled="disabled" class="btn btn-danger button_kp_renew">Delete</button>
+    <button disabled="disabled" class="btn btn-info button_kp_delete">Renew</button>
   </td>
 </template>
 
