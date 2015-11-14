@@ -6,15 +6,20 @@ Template.createca.events({
     var org_name = event.target[3].value;
     var state = event.target[4].value;
     var country = event.target[5].value;
+    var userId = Meteor.userId();
+    var username = 'anon';
 
-    Meteor.call('addCa', cn, email, locale_name, org_name, state, country, Meteor.userId(), Meteor.user().username, function (err, newid) {
+    if(Meteor.user()) {
+      username = Meteor.user().username;
+    }
+
+    Meteor.call('addCa', cn, email, locale_name, org_name, state, country, userId, username, function (err, newid) {
       if (err) {
         console.log(err);
       } else {
         Router.go('cas.show', {_id: newid});
       }
     });
-    event.target[0].value = "";
     return false;
   }
 });

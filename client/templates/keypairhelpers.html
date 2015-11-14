@@ -1,14 +1,24 @@
 <template name="kpdownloads">
   <td>
+    {{#if currentUser}}
+    <button class="btn btn-success button_download_kpkey">.key</button>
+    <button class="btn btn-success button_download_kpcert">.crt</button>
+    {{else}}
     <button disabled="disabled" class="btn btn-success button_download_kpkey">.key</button>
     <button disabled="disabled" class="btn btn-success button_download_kpcert">.crt</button>
+    {{/if}}
   </td>
 </template>
 
 <template name="kpactions">
   <td>
+    {{#if currentUser}}
+    <button class="btn btn-danger button_kp_renew">Delete</button>
+    <button class="btn btn-info button_kp_delete">Renew</button>
+    {{else}}
     <button disabled="disabled" class="btn btn-danger button_kp_renew">Delete</button>
     <button disabled="disabled" class="btn btn-info button_kp_delete">Renew</button>
+    {{/if}}
   </td>
 </template>
 

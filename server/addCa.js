@@ -1,5 +1,10 @@
 Meteor.methods({
   addCa: function (cn, email, locale_name, org_name, state, country, owner, username) {
+
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+
     Future = Npm.require('fibers/future');
     var mf = new Future();
 

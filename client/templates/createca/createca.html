@@ -1,5 +1,6 @@
 <template name="createca">
 <div class="container-fluid">
+{{#if currentUser}}
 <form id="form-createca" class="form-horizontal">
 
   <div class="form-group">
@@ -51,6 +52,8 @@
   </div>
 
 </form>
-
+{{ else }}
+<div class="alert alert-info" role="alert">Please log in to create a Certificate Authority</div>
+{{ /if }}
 </div>
 </template>
