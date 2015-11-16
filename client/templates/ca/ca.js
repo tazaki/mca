@@ -8,7 +8,6 @@ Template.ca.helpers({
 
 Template.ca.events({
   "click .keypair-row": function (event) {
-    console.log(this._id);
     Router.go('keypairs.show', {_id: this._id});
   },
   "click .ca-info-button": function (event) {

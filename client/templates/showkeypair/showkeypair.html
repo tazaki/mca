@@ -1,0 +1,34 @@
+<template name="showkeypair">
+<div id="cainfo_table" class="container">
+  <h2>Keypair Information</h2>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Common Name</td>
+        <td>{{ cn }}</td>
+      </tr>
+      <tr>
+        <td>Created</td>
+        <td>{{ toMomentTFN created }}</td>
+      </tr>
+      <tr>
+        <td>Expires</td>
+        <td>{{ toMomentTFN expires }}</td>
+      </tr>
+      <tr>
+        <td>Signing CA CN</td>
+        <td>{{ caname }}
+          <button type="button" class="btn btn-info ca-info-button">Info</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Created by</td>
+        <td>{{ username }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {{> kpdownloads }}
+  {{> kpactions }}
+</div>
+</template>
