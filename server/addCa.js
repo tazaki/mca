@@ -5,14 +5,11 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
 
-    Future = Npm.require('fibers/future');
-    var mf = new Future();
-
     created = new Date();
     expires = new Date();
     expires.setFullYear(created.getFullYear()+10);
 
-    Cas.insert({
+    var data = {
       cn: cn,
       email: email,
       localename: locale_name,
@@ -25,13 +22,7 @@ Meteor.methods({
       username: username
       //cert: mca_root_path + 'cacrt.pem',
       //key: mca_root_path + 'cakey.pem'
-    }, function (err,newid) {
-      if (err) {
-        mf.return(err);
-      } else {
-        mf.return(newid);
-      }
-    });
-  return mf.wait();
+    };
+    return Cas.insert(data);
   }
 });
